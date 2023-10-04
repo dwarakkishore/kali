@@ -1,0 +1,151 @@
+{
+  "project_info": {
+    "project_number": "877348360184",
+    "firebase_url": "https://kali-c4429-default-rtdb.firebaseio.com",
+    "project_id": "kali-c4429",
+    "storage_bucket": "kali-c4429.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877348360184:android:3b4bef0b4ae9056cb0500d",
+        "android_client_info": {
+          "package_name": "com.admin.kali"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877348360184-ere24gkgekt007sk3bk4v31n786erk0j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.admin.kali",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "877348360184-0jshq11i4nf9f8i1ggbrcjnq0tsjbd21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSFnvqhG4C_tHns5nprMKpYKRzewf4RUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877348360184-0jshq11i4nf9f8i1ggbrcjnq0tsjbd21.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "877348360184-9nukrlgksrb07a50o0prajh471f9bf02.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.adminkali"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877348360184:android:f701e66eb5150f2eb0500d",
+        "android_client_info": {
+          "package_name": "com.flutterflow.adminkali"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877348360184-f1s16l8ceo5efid5l8ev8bd785f6i75o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.adminkali",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "877348360184-0jshq11i4nf9f8i1ggbrcjnq0tsjbd21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSFnvqhG4C_tHns5nprMKpYKRzewf4RUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877348360184-0jshq11i4nf9f8i1ggbrcjnq0tsjbd21.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "877348360184-9nukrlgksrb07a50o0prajh471f9bf02.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.adminkali"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877348360184:android:b4d29d81ecbdf772b0500d",
+        "android_client_info": {
+          "package_name": "com.mycompany.kali"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877348360184-mkouv7k3k23o0e7obosj81i08aadtda3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.kali",
+            "certificate_hash": "1e888655e54f6ab5d6a7b3e58fd4e300a4ac85e3"
+          }
+        },
+        {
+          "client_id": "877348360184-picnoid6hgoa3hth2ehpavsg9ab320mc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.kali",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "877348360184-0jshq11i4nf9f8i1ggbrcjnq0tsjbd21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSFnvqhG4C_tHns5nprMKpYKRzewf4RUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877348360184-0jshq11i4nf9f8i1ggbrcjnq0tsjbd21.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "877348360184-9nukrlgksrb07a50o0prajh471f9bf02.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.adminkali"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
