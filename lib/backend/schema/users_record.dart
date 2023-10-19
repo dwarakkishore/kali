@@ -56,6 +56,11 @@ class UsersRecord extends FirestoreRecord {
   DocumentReference? get score => _score;
   bool hasScore() => _score != null;
 
+  // "Premium" field.
+  bool? _premium;
+  bool get premium => _premium ?? false;
+  bool hasPremium() => _premium != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -65,6 +70,7 @@ class UsersRecord extends FirestoreRecord {
     _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _score = snapshotData['score'] as DocumentReference?;
+    _premium = snapshotData['Premium'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -109,6 +115,7 @@ Map<String, dynamic> createUsersRecordData({
   String? uid,
   DateTime? createdTime,
   DocumentReference? score,
+  bool? premium,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -120,6 +127,7 @@ Map<String, dynamic> createUsersRecordData({
       'uid': uid,
       'created_time': createdTime,
       'score': score,
+      'Premium': premium,
     }.withoutNulls,
   );
 
@@ -138,7 +146,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.password == e2?.password &&
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.score == e2?.score;
+        e1?.score == e2?.score &&
+        e1?.premium == e2?.premium;
   }
 
   @override
@@ -150,7 +159,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.password,
         e?.uid,
         e?.createdTime,
-        e?.score
+        e?.score,
+        e?.premium
       ]);
 
   @override

@@ -143,10 +143,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'hi': 'साइन अप करें',
       'kn': 'ಸೈನ್ ಅಪ್ ಮಾಡಿ',
     },
-    'wkjbt6bm': {
-      'en': 'Continue with Google',
-      'hi': 'Google के साथ जारी रखें',
-      'kn': 'Google ನೊಂದಿಗೆ ಮುಂದುವರಿಯಿರಿ',
+    'u6217q6m': {
+      'en': 'Sign in with Google',
+      'hi': 'Google से साइन इन करें',
+      'kn': 'Google ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ',
     },
   },
   // forgetpassword
@@ -174,75 +174,82 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Homepage
   {
-    'knvkqn7z': {
-      'en': 'Hello ',
-      'hi': 'नमस्ते',
-      'kn': 'ನಮಸ್ಕಾರ',
+    'd5kpo191': {
+      'en': 'Recent Annoncements',
+      'hi': 'हाल की घोषणाएँ',
+      'kn': 'ಇತ್ತೀಚಿನ ಪ್ರಕಟಣೆಗಳು',
     },
-    '6x97m7ah': {
-      'en': ',',
-      'hi': ',',
-      'kn': ',',
+    '17enp5bz': {
+      'en': 'Explore Contents',
+      'hi': 'सामग्री का अन्वेषण करें',
+      'kn': 'ವಿಷಯಗಳನ್ನು ಅನ್ವೇಷಿಸಿ',
     },
-    '7jnd5yjn': {
-      'en': 'Your Quiz',
-      'hi': 'आपकी प्रश्नोत्तरी',
-      'kn': 'ನಿಮ್ಮ ರಸಪ್ರಶ್ನೆ',
+    '6vpysxlq': {
+      'en': 'Popular Quiz',
+      'hi': 'लोकप्रिय प्रश्नोत्तरी',
+      'kn': 'ಜನಪ್ರಿಯ ರಸಪ್ರಶ್ನೆ',
     },
-    'gsxa3p6z': {
-      'en': 'Generative Ai ',
-      'hi': 'जनरेटिव ऐ',
-      'kn': 'ಜನರೇಟಿವ್ ಐ',
+    'umbnyiv0': {
+      'en': 'View all',
+      'hi': 'सभी को देखें',
+      'kn': 'ಎಲ್ಲಾ ವೀಕ್ಷಿಸಿ',
     },
     'dfyywlef': {
       'en': 'Language',
       'hi': 'भाषा',
       'kn': 'ಭಾಷೆ',
     },
+    's6sxiyc4': {
+      'en': 'Kali Generative',
+      'hi': 'काली उत्पादक',
+      'kn': 'ಕಾಳಿ ಜನರೇಟಿವ್',
+    },
+    'g6r1sg3q': {
+      'en': 'ai',
+      'hi': 'ऐ',
+      'kn': 'ai',
+    },
+    'auak7fz6': {
+      'en': 'Try now',
+      'hi': 'अब कोशिश करो',
+      'kn': 'ಈಗ ಪ್ರಯತ್ನಿಸಿ',
+    },
+    'b25qwnhs': {
+      'en': 'Invite Friends',
+      'hi': 'मित्रों को आमंत्रित करें',
+      'kn': 'ಸ್ನೇಹಿತರನ್ನು ಆಹ್ವಾನಿಸಿ',
+    },
+    'nwzse2ka': {
+      'en': 'Invite now',
+      'hi': 'अभी आमंत्रित करें',
+      'kn': 'ಈಗ ಆಹ್ವಾನಿಸಿ',
+    },
+    '5x8krj10': {
+      'en': 'Progress',
+      'hi': 'प्रगति',
+      'kn': 'ಪ್ರಗತಿ',
+    },
+    't1wqilj1': {
+      'en': 'Upgrade to Premium',
+      'hi': 'प्रीमियम में अपग्रेड करें',
+      'kn': 'ಪ್ರೀಮಿಯಂಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ',
+    },
     '3tvdgoja': {
       'en': 'Log out',
       'hi': 'लॉग आउट',
       'kn': 'ಲಾಗ್ ಔಟ್',
     },
+    't6v9vjwt': {
+      'en': 'Hello ',
+      'hi': 'नमस्ते',
+      'kn': 'ನಮಸ್ಕಾರ',
+    },
+    'fohajhi7': {
+      'en': ',',
+      'hi': ',',
+      'kn': ',',
+    },
     'qczng989': {
-      'en': '',
-      'hi': 'घर',
-      'kn': 'ಮನೆ',
-    },
-  },
-  // settings
-  {
-    '51twku3b': {
-      'en': 'Settings',
-      'hi': 'समायोजन',
-      'kn': 'ಸಂಯೋಜನೆಗಳು',
-    },
-    '6st8zeth': {
-      'en': 'Language',
-      'hi': 'भाषा',
-      'kn': 'ಭಾಷೆ',
-    },
-    'mm9v67g1': {
-      'en': 'Notification Settings',
-      'hi': 'अधिसूचना सेटिंग्स',
-      'kn': 'ಅಧಿಸೂಚನೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು',
-    },
-    '4bgsgs9k': {
-      'en': 'Log out of account',
-      'hi': 'खाते से लॉग आउट करें',
-      'kn': 'ಖಾತೆಯಿಂದ ಲಾಗ್ ಔಟ್ ಮಾಡಿ',
-    },
-    's6nhcpfe': {
-      'en': 'Log Out?',
-      'hi': 'लॉग आउट?',
-      'kn': 'ಲಾಗ್ ಔಟ್?',
-    },
-    '367osrbd': {
-      'en': 'Settings',
-      'hi': 'समायोजन',
-      'kn': 'ಸಂಯೋಜನೆಗಳು',
-    },
-    '5w253p7k': {
       'en': '',
       'hi': 'घर',
       'kn': 'ಮನೆ',
@@ -266,54 +273,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kn': 'ಪೂರ್ಣಗೊಂಡಿದೆ',
     },
     'i0wg0we1': {
-      'en': 'Home',
-      'hi': 'घर',
-      'kn': 'ಮನೆ',
-    },
-  },
-  // Scorepage
-  {
-    '52bj1pzp': {
-      'en': 'Congratulation',
-      'hi': 'बधाई',
-      'kn': 'ಅಭಿನಂದನೆಗಳು',
-    },
-    'x9nvylyy': {
-      'en': 'You have got ',
-      'hi': 'तुम्हें मिल गया है',
-      'kn': 'ನಿಮಗೆ ಸಿಕ್ಕಿದೆ',
-    },
-    '4qeqi980': {
-      'en': ' points',
-      'hi': 'अंक',
-      'kn': 'ಅಂಕಗಳು',
-    },
-    'wgkqatbk': {
-      'en': 'share your score',
-      'hi': 'अपना स्कोर साझा करें',
-      'kn': 'ನಿಮ್ಮ ಸ್ಕೋರ್ ಹಂಚಿಕೊಳ್ಳಿ',
-    },
-    'qzjvft0r': {
-      'en': ' out of ',
-      'hi': 'से बाहर',
-      'kn': 'ಹೊರಗೆ',
-    },
-    '1rbm10db': {
-      'en': ' correct',
-      'hi': 'सही',
-      'kn': 'ಸರಿಯಾದ',
-    },
-    'qhhifqrp': {
-      'en': 'For Any Queries',
-      'hi': 'किसी भी प्रश्न के लिए',
-      'kn': 'ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳಿಗೆ',
-    },
-    'q9zl4v8r': {
-      'en': 'info@thekalieducation.com',
-      'hi': 'info@the Kalieducation.com',
-      'kn': 'info@thekalieducation.com',
-    },
-    '1lpfsnej': {
       'en': 'Home',
       'hi': 'घर',
       'kn': 'ಮನೆ',
@@ -430,185 +389,230 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kn': 'ಮನೆ',
     },
   },
-  // signupp
+  // Quizconifrmation
   {
-    'bgvasy2r': {
-      'en': 'Join us & learn amazingly',
-      'hi': 'हमसे जुड़ें और आश्चर्यजनक रूप से सीखें',
-      'kn': 'ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ ಮತ್ತು ಅದ್ಭುತವಾಗಿ ಕಲಿಯಿರಿ',
+    '518egu31': {
+      'en': 'Please read the text below carefully\nso you can understand it',
+      'hi': 'कृपया नीचे दिए गए पाठ को ध्यान से पढ़ें\nतो आप इसे समझ सकते हैं',
+      'kn':
+          'ದಯವಿಟ್ಟು ಕೆಳಗಿನ ಪಠ್ಯವನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ಓದಿ\nಆದ್ದರಿಂದ ನೀವು ಅದನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಬಹುದು',
     },
-    'keulr30h': {
+    'siaylvqu': {
+      'en':
+          '1. 50 point awarded for a correct answer and no\nmarks for a incorrect answer\n\n2. Tap on options to select the correct answer\n\n3. Click submit if you are sure you want to\ncomplete all the quizzes\n\n4. Note \" Dark Mode is Disabled ! \"',
+      'hi':
+          '1. सही उत्तर के लिए 50 अंक दिए गए और नहीं\nग़लत उत्तर के लिए अंक\n\n2. सही उत्तर चुनने के लिए विकल्पों पर टैप करें\n\n3. यदि आप सुनिश्चित हैं कि आप सबमिट करना चाहते हैं तो सबमिट पर क्लिक करें\nसभी प्रश्नोत्तरी पूरी करें\n\n4. नोट \"डार्क मोड अक्षम है!\"',
+      'kn':
+          '1. ಸರಿಯಾದ ಉತ್ತರಕ್ಕಾಗಿ 50 ಅಂಕಗಳನ್ನು ನೀಡಲಾಗುತ್ತದೆ ಮತ್ತು ಇಲ್ಲ\nತಪ್ಪಾದ ಉತ್ತರಕ್ಕೆ ಅಂಕಗಳು\n\n2. ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಆಯ್ಕೆಗಳ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ\n\n3. ನೀವು ಖಚಿತವಾಗಿ ಬಯಸಿದರೆ ಸಲ್ಲಿಸು ಕ್ಲಿಕ್ ಮಾಡಿ\nಎಲ್ಲಾ ರಸಪ್ರಶ್ನೆಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ\n\n4. ಗಮನಿಸಿ \"ಡಾರ್ಕ್ ಮೋಡ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ!\"',
+    },
+    'pbwlks8a': {
+      'en': 'Take Test',
+      'hi': 'परीक्षा लो',
+      'kn': 'ಪರೀಕ್ಷೆ ತೆಗೆದುಕೊಳ್ಳಿ',
+    },
+    'rk15ubrv': {
+      'en': 'Test Confirmation',
+      'hi': 'परीक्षण पुष्टिकरण',
+      'kn': 'ಪರೀಕ್ಷಾ ದೃಢೀಕರಣ',
+    },
+    'dvqzp3cd': {
+      'en': 'Home',
+      'hi': 'घर',
+      'kn': 'ಮನೆ',
+    },
+  },
+  // signupnew
+  {
+    'c238dzv3': {
+      'en': 'Create an account',
+      'hi': 'खाता बनाएं',
+      'kn': 'ಖಾತೆಯನ್ನು ತೆರೆಯಿರಿ',
+    },
+    'chs4lv52': {
+      'en': 'Let\'s get started by filling out the form below.',
+      'hi': 'आइए नीचे दिया गया फॉर्म भरकर शुरुआत करें।',
+      'kn': 'ಕೆಳಗಿನ ಫಾರ್ಮ್ ಅನ್ನು ಭರ್ತಿ ಮಾಡುವ ಮೂಲಕ ಪ್ರಾರಂಭಿಸೋಣ.',
+    },
+    'rnfshx5e': {
       'en': 'Display Name',
       'hi': 'प्रदर्शित होने वाला नाम',
       'kn': 'ಪ್ರದರ್ಶನ ಹೆಸರು',
     },
-    'woy79l1n': {
-      'en': 'Enter your name',
-      'hi': '',
-      'kn': '',
+    '1kwpzor9': {
+      'en': 'Email',
+      'hi': 'ईमेल',
+      'kn': 'ಇಮೇಲ್',
     },
-    '75ia9uxq': {
-      'en': 'Email Address',
-      'hi': 'मेल पता',
-      'kn': 'ಇಮೇಲ್ ವಿಳಾಸ',
-    },
-    'ypbgr5od': {
-      'en': 'Enter you mail',
-      'hi': '',
-      'kn': '',
-    },
-    '109r28j9': {
-      'en': 'phone number',
-      'hi': 'फ़ोन नंबर',
-      'kn': 'ದೂರವಾಣಿ ಸಂಖ್ಯೆ',
-    },
-    '8847hctf': {
-      'en': '+91',
-      'hi': '',
-      'kn': '',
-    },
-    '364utgl6': {
+    'i6m52ocf': {
       'en': 'Password',
       'hi': 'पासवर्ड',
       'kn': 'ಗುಪ್ತಪದ',
     },
-    '268xgkio': {
-      'en': 'confirm Password',
+    'xopwflmb': {
+      'en': 'Confirm Password',
       'hi': 'पासवर्ड की पुष्टि कीजिये',
       'kn': 'ಪಾಸ್ವರ್ಡ್ ದೃಢೀಕರಿಸಿ',
     },
-    'wu2vrrm7': {
-      'en': 'I Agree to Terms & condition of Kali',
-      'hi': 'मैं काली के नियमों और शर्तों से सहमत हूं',
-      'kn': 'ನಾನು ಕಾಲಿಯ ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳಿಗೆ ಸಮ್ಮತಿಸುತ್ತೇನೆ',
+    'ocvgf4pz': {
+      'en': 'Upload image',
+      'hi': 'तस्विर अपलोड करना',
+      'kn': 'ಚಿತ್ರವನ್ನು ಅಪ್ಲೋಡ್ ಮಾಡಿ',
     },
-    'ang9o9rh': {
-      'en': 'I would like to receive inspriation emails.',
-      'hi': 'मैं प्रेरणा ईमेल प्राप्त करना चाहूँगा.',
-      'kn': 'ನಾನು ಪ್ರೇರಣೆ ಇಮೇಲ್‌ಗಳನ್ನು ಸ್ವೀಕರಿಸಲು ಬಯಸುತ್ತೇನೆ.',
-    },
-    'q6lmwxh8': {
+    'q645225b': {
       'en': 'Create Account',
       'hi': 'खाता बनाएं',
       'kn': 'ಖಾತೆ ತೆರೆ',
     },
-    '3mlvr8i2': {
-      'en': 'Back',
-      'hi': 'खाता बनाएं',
-      'kn': 'ಖಾತೆ ತೆರೆ',
+    'rkl58r74': {
+      'en': 'Already have an account?',
+      'hi': 'क्या आपके पास पहले से एक खाता मौजूद है?',
+      'kn': 'ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರ?',
     },
-    'zg1dj4ko': {
+    'onqcmpx2': {
+      'en': 'Sign In Here',
+      'hi': 'यहां साइन इन करो',
+      'kn': 'ಇಲ್ಲಿ ಸೈನ್ ಇನ್ ಮಾಡಿ',
+    },
+    '65ni109p': {
+      'en': 'Forgot Password?',
+      'hi': 'पासवर्ड भूल गए?',
+      'kn': 'ಪಾಸ್ವರ್ಡ್ ಮರೆತಿರಾ?',
+    },
+  },
+  // score
+  {
+    '9e7cp4vi': {
       'en': 'Home',
       'hi': 'घर',
       'kn': 'ಮನೆ',
     },
   },
-  // feeback
+  // welcomegpt
   {
-    'ocaiv9vd': {
-      'en': 'Name',
-      'hi': 'नाम',
-      'kn': 'ಹೆಸರು',
+    'pb4nvxlk': {
+      'en': 'Kali Generative',
+      'hi': 'काली उत्पादक',
+      'kn': 'ಕಾಳಿ ಜನರೇಟಿವ್',
     },
-    '7yco3qik': {
-      'en': 'email',
-      'hi': 'ईमेल',
-      'kn': 'ಇಮೇಲ್',
+    'rbmbfzku': {
+      'en': 'ai',
+      'hi': 'ऐ',
+      'kn': 'ai',
     },
-    'cvarp27y': {
-      'en': 'Message',
-      'hi': 'संदेश',
-      'kn': 'ಸಂದೇಶ',
+    '1onwf350': {
+      'en': 'How can I help you today?',
+      'hi': 'आज मैं आपकी मदद करने में कैसे सक्षम हूं?',
+      'kn': 'ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?',
     },
-    'sqn3ejrl': {
-      'en': 'Enter your message',
-      'hi': 'अपना संदेश दर्ज करें',
-      'kn': 'ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ನಮೂದಿಸಿ',
+    'bn71omq8': {
+      'en': 'hello Ask me anything...',
+      'hi': 'नमस्ते मुझसे कुछ भी पूछो...',
+      'kn': 'ಹಲೋ ಏನಾದ್ರೂ ಕೇಳು...',
     },
-    '1re29pmc': {
-      'en': 'Submit',
-      'hi': 'जमा करना',
-      'kn': 'ಸಲ್ಲಿಸು',
+    'md02n0lp': {
+      'en': 'Upgrade to Premium',
+      'hi': 'प्रीमियम में अपग्रेड करें',
+      'kn': 'ಪ್ರೀಮಿಯಂಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ',
     },
-    '0lzci5aa': {
-      'en': 'Thanks for your valuable time',
-      'hi': 'आपके बहुमूल्य समय के लिए धन्यवाद',
-      'kn': 'ನಿಮ್ಮ ಅಮೂಲ್ಯ ಸಮಯಕ್ಕೆ ಧನ್ಯವಾದಗಳು',
-    },
-  },
-  // scorerevealing
-  {
-    '0cls83le': {
-      'en': 'Answers',
-      'hi': 'जवाब',
-      'kn': 'ಉತ್ತರಗಳು',
-    },
-    '2p4fxe8o': {
+    '4u9t0914': {
       'en': 'Home',
       'hi': 'घर',
       'kn': 'ಮನೆ',
     },
   },
-  // Aiintroduction
+  // gptpage
   {
-    'o4goejty': {
-      'en': 'Machine learning',
-      'hi': 'यंत्र अधिगम',
-      'kn': 'ಯಂತ್ರ ಕಲಿಕೆ',
+    '47tt1ir6': {
+      'en': 'Welcome chief',
+      'hi': 'स्वागत है मुखिया जी',
+      'kn': 'ಮುಖ್ಯಸ್ಥ ಸ್ವಾಗತಿಸಿದರು',
     },
-    'i7rnzskt': {
+    '30uisgh9': {
+      'en': 'Field is required',
+      'hi': 'ये स्थान भरा जाना है',
+      'kn': 'ಕ್ಷೇತ್ರ ಅಗತ್ಯವಿದೆ',
+    },
+    'ndk4706m': {
+      'en': 'Please choose an option from the dropdown',
+      'hi': 'कृपया ड्रॉपडाउन से एक विकल्प चुनें',
+      'kn': 'ದಯವಿಟ್ಟು ಡ್ರಾಪ್‌ಡೌನ್‌ನಿಂದ ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿ',
+    },
+    'cs4d0fay': {
+      'en': 'Ask me anything...',
+      'hi': 'मुझसे कुछ भी पूछें...',
+      'kn': 'ನನ್ನನ್ನು ಎನಾದರು ಕೇಳು...',
+    },
+    '0g97m6uw': {
+      'en': 'New Chat',
+      'hi': 'नई चैट',
+      'kn': 'ಹೊಸ ಚಾಟ್',
+    },
+    'qoq8dclu': {
+      'en': 'Past Chats',
+      'hi': 'पिछली चैट',
+      'kn': 'ಹಿಂದಿನ ಚಾಟ್‌ಗಳು',
+    },
+    '95jlzi0y': {
+      'en': 'Home',
+      'hi': 'घर',
+      'kn': 'ಮನೆ',
+    },
+  },
+  // tiktikkkkk
+  {
+    'molnturs': {
+      'en': 'Home',
+      'hi': 'घर',
+      'kn': 'ಮನೆ',
+    },
+  },
+  // Details36ArticleDetails
+  {
+    '0y3jy12a': {
+      'en': 'Home',
+      'hi': 'घर',
+      'kn': 'ಮನೆ',
+    },
+  },
+  // OnboardingPage
+  {
+    '56yde4a2': {
+      'en': 'Setting up ',
+      'hi': '',
+      'kn': '',
+    },
+    'a2sxp184': {
+      'en': 'Welcome to the Future Education !',
+      'hi': '',
+      'kn': '',
+    },
+    'c81nn4e7': {
+      'en': 'Future Education',
+      'hi': '',
+      'kn': '',
+    },
+    'nbfij2dk': {
       'en':
-          '\"Empower education with our inbuilt ML-trained model, seamlessly integrated into our app. Enhance learning experiences, provide personalized insights, and revolutionize the way students engage with educational content.\"\n',
-      'hi':
-          '\"हमारे इनबिल्ट एमएल-प्रशिक्षित मॉडल के साथ शिक्षा को सशक्त बनाएं, जो हमारे ऐप में सहजता से एकीकृत है। सीखने के अनुभवों को बढ़ाएं, वैयक्तिकृत अंतर्दृष्टि प्रदान करें, और छात्रों के शैक्षिक सामग्री के साथ जुड़ने के तरीके में क्रांतिकारी बदलाव लाएं।\"',
-      'kn':
-          '\"ನಮ್ಮ ಅಂತರ್ಗತ ML-ತರಬೇತಿ ಪಡೆದ ಮಾದರಿಯೊಂದಿಗೆ ಶಿಕ್ಷಣವನ್ನು ಸಬಲಗೊಳಿಸಿ, ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಮನಬಂದಂತೆ ಸಂಯೋಜಿಸಲಾಗಿದೆ. ಕಲಿಕೆಯ ಅನುಭವಗಳನ್ನು ವರ್ಧಿಸಿ, ವೈಯಕ್ತೀಕರಿಸಿದ ಒಳನೋಟಗಳನ್ನು ಒದಗಿಸಿ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ವಿಷಯದೊಂದಿಗೆ ವಿದ್ಯಾರ್ಥಿಗಳು ತೊಡಗಿಸಿಕೊಳ್ಳುವ ರೀತಿಯಲ್ಲಿ ಕ್ರಾಂತಿಕಾರಿಗೊಳಿಸಿ.\"',
-    },
-    'v3xdqvs5': {
-      'en': 'Image Detection',
-      'hi': 'छवि का पता लगाना',
-      'kn': 'ಚಿತ್ರ ಪತ್ತೆ',
-    },
-    '19yv753w': {
-      'en':
-          '\"Elevate education with our inbuilt ML image detection model within the app. Enable students to explore and learn from the visual world, fostering a deeper understanding of subjects. Transforming education one image at a time.\"\n',
-      'hi':
-          '\"ऐप के भीतर हमारे इनबिल्ट एमएल इमेज डिटेक्शन मॉडल के साथ शिक्षा को उन्नत करें। छात्रों को दृश्य दुनिया का पता लगाने और सीखने में सक्षम बनाएं, विषयों की गहरी समझ को बढ़ावा दें। शिक्षा को एक समय में एक छवि में बदलना।\"',
-      'kn':
-          '\"ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ನಮ್ಮ ಅಂತರ್ಗತ ML ಇಮೇಜ್ ಪತ್ತೆ ಮಾದರಿಯೊಂದಿಗೆ ಶಿಕ್ಷಣವನ್ನು ಉನ್ನತೀಕರಿಸಿ. ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ದೃಶ್ಯ ಪ್ರಪಂಚವನ್ನು ಅನ್ವೇಷಿಸಲು ಮತ್ತು ಕಲಿಯಲು, ವಿಷಯಗಳ ಆಳವಾದ ತಿಳುವಳಿಕೆಯನ್ನು ಬೆಳೆಸಲು ಸಕ್ರಿಯಗೊಳಿಸಿ. ಶಿಕ್ಷಣವನ್ನು ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ಚಿತ್ರವನ್ನು ಪರಿವರ್ತಿಸುವುದು.\"',
-    },
-    'wpmr66x8': {
-      'en': 'Next',
-      'hi': 'अगला',
-      'kn': 'ಮುಂದೆ',
-    },
-    'emwgu83y': {
-      'en': 'Home',
-      'hi': 'घर',
-      'kn': 'ಮನೆ',
-    },
-  },
-  // CHATGPT
-  {
-    'gc46v8h9': {
-      'en': 'Copy response',
+          'With an inbuilt artificial intelligence and cutting-edge predictive machine learning models, ',
       'hi': '',
       'kn': '',
     },
-    '9mu0e49u': {
-      'en': 'Type something...',
+    'ehon31qa': {
+      'en': 'Done',
       'hi': '',
       'kn': '',
     },
-    'dp0tr08m': {
-      'en': 'Home',
+    '6rkbt4ab': {
+      'en': 'Sign up to join New era of Education',
       'hi': '',
       'kn': '',
     },
-  },
-  // asffdfs
-  {
-    'nizs8hwx': {
+    'a7i5ujub': {
+      'en': 'Join Now',
+      'hi': '',
+      'kn': '',
+    },
+    '00df9kdj': {
       'en': 'Home',
       'hi': '',
       'kn': '',
@@ -616,15 +620,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // quizsets
   {
-    '4d91xbys': {
-      'en': ' questions',
+    'uxb4rk9x': {
+      'en': ' Questions',
       'hi': 'प्रशन',
       'kn': 'ಪ್ರಶ್ನೆಗಳು',
     },
-    'uu0cf6ai': {
-      'en': ' min',
-      'hi': 'मिन',
-      'kn': 'ನಿಮಿಷ',
+    'brogtioz': {
+      'en': ' Mins',
+      'hi': 'मिनट',
+      'kn': 'ನಿಮಿಷಗಳು',
     },
   },
   // ppppp
@@ -675,30 +679,156 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'fx1h0lrj': {
       'en':
           'Welcome to Kali\'s Gpt , The Future of Education ! \n\n\"Empower education with our inbuilt ML-trained model, seamlessly integrated into our app. Enhance learning experiences, provide personalized insights, and revolutionize the way students engage with educational content.\"\n',
-      'hi': '',
-      'kn': '',
+      'hi':
+          'काली के जीपीटी, शिक्षा का भविष्य में आपका स्वागत है!\n\n\"हमारे इनबिल्ट एमएल-प्रशिक्षित मॉडल के साथ शिक्षा को सशक्त बनाएं, जो हमारे ऐप में सहजता से एकीकृत है। सीखने के अनुभवों को बढ़ाएं, वैयक्तिकृत अंतर्दृष्टि प्रदान करें, और छात्रों के शैक्षिक सामग्री के साथ जुड़ने के तरीके में क्रांतिकारी बदलाव लाएं।\"',
+      'kn':
+          'ಕಾಲಿಯ Gpt ಗೆ ಸುಸ್ವಾಗತ , ಶಿಕ್ಷಣದ ಭವಿಷ್ಯ !\n\n\"ನಮ್ಮ ಅಂತರ್ಗತ ML-ತರಬೇತಿ ಪಡೆದ ಮಾದರಿಯೊಂದಿಗೆ ಶಿಕ್ಷಣವನ್ನು ಸಬಲಗೊಳಿಸಿ, ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಮನಬಂದಂತೆ ಸಂಯೋಜಿಸಲಾಗಿದೆ. ಕಲಿಕೆಯ ಅನುಭವಗಳನ್ನು ವರ್ಧಿಸಿ, ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಒಳನೋಟಗಳನ್ನು ಒದಗಿಸಿ ಮತ್ತು ವಿದ್ಯಾರ್ಥಿಗಳು ಶೈಕ್ಷಣಿಕ ವಿಷಯದೊಂದಿಗೆ ತೊಡಗಿಸಿಕೊಳ್ಳುವ ರೀತಿಯಲ್ಲಿ ಕ್ರಾಂತಿಕಾರಿಗೊಳಿಸಿ.\"',
     },
   },
   // photoupload
   {
     'dy0dx7gf': {
       'en': 'Change Photo',
-      'hi': '',
-      'kn': '',
+      'hi': 'छवि बदलो',
+      'kn': 'ಫೋಟೋ ಬದಲಾಯಿಸಿ',
     },
     '83fv62ja': {
       'en':
           'Upload a new photo below in order to change your avatar seen by others.',
-      'hi': '',
-      'kn': '',
+      'hi':
+          'दूसरों द्वारा देखे गए अपने अवतार को बदलने के लिए नीचे एक नई फ़ोटो अपलोड करें।',
+      'kn':
+          'ಇತರರು ನೋಡಿದ ನಿಮ್ಮ ಅವತಾರವನ್ನು ಬದಲಾಯಿಸಲು ಕೆಳಗೆ ಹೊಸ ಫೋಟೋವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.',
     },
     'jr9hq3um': {
       'en': 'Upload Image',
-      'hi': '',
-      'kn': '',
+      'hi': 'तस्विर अपलोड करना',
+      'kn': 'ಚಿತ್ರವನ್ನು ಅಪ್ಲೋಡ್ ಮಾಡಿ',
     },
     'sxs9zugb': {
       'en': 'Save Changes',
+      'hi': 'परिवर्तनों को सुरक्षित करें',
+      'kn': 'ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸು',
+    },
+  },
+  // Preeeeeee
+  {
+    'gwb7mv6t': {
+      'en': 'Later',
+      'hi': 'बाद में',
+      'kn': 'ನಂತರ',
+    },
+    'zla1wlx7': {
+      'en': 'Upgrade to PRO',
+      'hi': 'प्रो में अपग्रेड',
+      'kn': 'ಪ್ರೊಗೆ ಅಪ್ಗ್ರೇಡ್ ಮಾಡಿ',
+    },
+    'wcvhbq7q': {
+      'en': 'Upgrade to remove ads, unlimited access all Quiz',
+      'hi': 'विज्ञापन हटाने के लिए अपग्रेड करें, सभी क्विज़ तक असीमित पहुंच',
+      'kn':
+          'ಜಾಹೀರಾತುಗಳನ್ನು ತೆಗೆದುಹಾಕಲು ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ, ಎಲ್ಲಾ ರಸಪ್ರಶ್ನೆಗೆ ಅನಿಯಮಿತ ಪ್ರವೇಶ',
+    },
+    'd6wxha0a': {
+      'en': 'Upgrade',
+      'hi': 'उन्नत करना',
+      'kn': 'ನವೀಕರಿಸಿ',
+    },
+  },
+  // qUIZCONF
+  {
+    '773kh3kb': {
+      'en': 'Hello World',
+      'hi': 'हैलो वर्ल्ड',
+      'kn': 'ಹಲೋ ವರ್ಲ್ಡ್',
+    },
+    'w9c7txs4': {
+      'en': 'Hello World',
+      'hi': 'हैलो वर्ल्ड',
+      'kn': 'ಹಲೋ ವರ್ಲ್ಡ್',
+    },
+  },
+  // Confirm
+  {
+    'boxrhhta': {
+      'en': ' questions',
+      'hi': 'प्रशन',
+      'kn': 'ಪ್ರಶ್ನೆಗಳು',
+    },
+    '0qsoh1e9': {
+      'en': ' min',
+      'hi': 'मिन',
+      'kn': 'ನಿಮಿಷ',
+    },
+  },
+  // scoreticket
+  {
+    '2re7rakf': {
+      'en': 'Score Card',
+      'hi': 'स्कोर कार्ड',
+      'kn': 'ಸ್ಕೋರ್ ಕಾರ್ಡ್',
+    },
+    'c3f0fqn7': {
+      'en': 'Tap to see Answers',
+      'hi': '',
+      'kn': '',
+    },
+    'nr2t5d98': {
+      'en': 'Upgrade to Premium',
+      'hi': '',
+      'kn': '',
+    },
+    'l0sm3sl8': {
+      'en': 'Return to home',
+      'hi': '',
+      'kn': '',
+    },
+    '8hr5jv09': {
+      'en': 'Score',
+      'hi': 'अंक',
+      'kn': 'ಸ್ಕೋರ್',
+    },
+    'fc5g1jd7': {
+      'en': '---------',
+      'hi': '---------',
+      'kn': '-------',
+    },
+  },
+  // aiiiiii
+  {
+    'xb89n8zn': {
+      'en': 'Kali generative',
+      'hi': 'काली उत्पादक',
+      'kn': 'ಕಾಳಿ ಉತ್ಪಾದಕ',
+    },
+    'ibnyx58z': {
+      'en': 'ai',
+      'hi': 'ऐ',
+      'kn': 'ai',
+    },
+    'boxsjdb8': {
+      'en': 'GPT powered ',
+      'hi': 'जीपीटी संचालित',
+      'kn': 'GPT ಚಾಲಿತ',
+    },
+    'yhz1jid2': {
+      'en': 'Try now',
+      'hi': 'Try now',
+      'kn': 'Try now',
+    },
+  },
+  // sliderThumb
+  {
+    'un8hvnch': {
+      'en': 'Join us',
+      'hi': '',
+      'kn': '',
+    },
+  },
+  // slideThumb
+  {
+    'zalzu4e3': {
+      'en': 'slide to\nride',
       'hi': '',
       'kn': '',
     },

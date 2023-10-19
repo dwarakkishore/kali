@@ -41,6 +41,8 @@ class _QuizsetsWidgetState extends State<QuizsetsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => QuizsetsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -131,6 +133,21 @@ class _QuizsetsWidgetState extends State<QuizsetsWidget> {
                                       ),
                                 ),
                               ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 140.0, 0.0),
+                                child: Text(
+                                  widget.title!,
+                                  textAlign: TextAlign.start,
+                                  maxLines: 1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: Colors.white,
+                                      ),
+                                ),
+                              ),
                               Align(
                                 alignment: AlignmentDirectional(-1.00, 0.00),
                                 child: Padding(
@@ -183,23 +200,15 @@ class _QuizsetsWidgetState extends State<QuizsetsWidget> {
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
-                                        text: valueOrDefault<String>(
-                                          widget.totalquestions?.toString(),
-                                          '0',
+                                        text: widget.totalquestions.toString(),
+                                        style: TextStyle(
+                                          color: Colors.white,
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color: Colors.white,
-                                              fontSize: 11.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
                                       ),
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          '4d91xbys' /*  questions */,
+                                          'uxb4rk9x' /*  Questions */,
                                         ),
                                         style: TextStyle(
                                           color: Colors.white,
@@ -240,28 +249,15 @@ class _QuizsetsWidgetState extends State<QuizsetsWidget> {
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
-                                        text: valueOrDefault<String>(
-                                          formatNumber(
-                                            widget.quizduration,
-                                            formatType: FormatType.custom,
-                                            format: '###',
-                                            locale: 'en_US',
-                                          ),
-                                          '0',
+                                        text: widget.quizduration.toString(),
+                                        style: TextStyle(
+                                          color: Colors.white,
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color: Colors.white,
-                                              fontSize: 11.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
                                       ),
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'uu0cf6ai' /*  min */,
+                                          'brogtioz' /*  Mins */,
                                         ),
                                         style: TextStyle(
                                           color: Colors.white,

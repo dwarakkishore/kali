@@ -12,12 +12,13 @@ class QuizoptionWidget extends StatefulWidget {
     Key? key,
     required this.questionnum,
     required this.questionname,
-    required this.istrue,
-  }) : super(key: key);
+    bool? istrue,
+  })  : this.istrue = istrue ?? false,
+        super(key: key);
 
   final String? questionnum;
   final String? questionname;
-  final bool? istrue;
+  final bool istrue;
 
   @override
   _QuizoptionWidgetState createState() => _QuizoptionWidgetState();
@@ -36,6 +37,8 @@ class _QuizoptionWidgetState extends State<QuizoptionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => QuizoptionModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -56,11 +59,67 @@ class _QuizoptionWidgetState extends State<QuizoptionWidget> {
       highlightColor: Colors.transparent,
       onTap: () async {
         logFirebaseEvent('QUIZOPTION_Container_iv6nlsfi_ON_TAP');
-        if (widget.istrue!) {
+        if (widget.istrue) {
+          if (_model.isanswered != null) {
+            logFirebaseEvent('Container_update_component_state');
+            setState(() {
+              _model.isanswered = true;
+            });
+            logFirebaseEvent('Container_update_app_state');
+            setState(() {
+              FFAppState().completedquestions =
+                  FFAppState().completedquestions + -1;
+            });
+            logFirebaseEvent('Container_update_app_state');
+            setState(() {
+              FFAppState().score = FFAppState().score + -1;
+            });
+          } else {
+            logFirebaseEvent('Container_update_app_state');
+            setState(() {
+              FFAppState().completedquestions =
+                  FFAppState().completedquestions + 1;
+            });
+            logFirebaseEvent('Container_update_component_state');
+            setState(() {
+              _model.isanswered = true;
+            });
+            logFirebaseEvent('Container_update_app_state');
+            setState(() {
+              FFAppState().score = FFAppState().score + 1;
+            });
+          }
+        } else {
           if (_model.isanswered != null) {
             logFirebaseEvent('Container_update_component_state');
             setState(() {
               _model.isanswered = null;
+            });
+            logFirebaseEvent('Container_update_app_state');
+            setState(() {
+              FFAppState().completedquestions =
+                  FFAppState().completedquestions + -1;
+            });
+          } else {
+            logFirebaseEvent('Container_update_component_state');
+            setState(() {
+              _model.isanswered = false;
+            });
+            logFirebaseEvent('Container_update_app_state');
+            setState(() {
+              FFAppState().completedquestions =
+                  FFAppState().completedquestions + 1;
+            });
+          }
+        }
+      },
+      onLongPress: () async {
+        logFirebaseEvent('QUIZOPTION_Container_iv6nlsfi_ON_LONG_PR');
+        if (widget.istrue) {
+          if (_model.isanswered != null) {
+            logFirebaseEvent('Container_update_component_state');
+            setState(() {
+              _model.isanswered = true;
             });
             logFirebaseEvent('Container_update_app_state');
             setState(() {
@@ -110,7 +169,9 @@ class _QuizoptionWidgetState extends State<QuizoptionWidget> {
           }
         }
       },
-      child: Container(
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 100),
+        curve: Curves.easeInOut,
         width: double.infinity,
         height: 60.0,
         decoration: BoxDecoration(
@@ -121,10 +182,10 @@ class _QuizoptionWidgetState extends State<QuizoptionWidget> {
               } else if (_model.isanswered == false) {
                 return Color(0xFF169E59);
               } else {
-                return Color(0xD5FFFFFF);
+                return Color(0xDAFFFFFF);
               }
             }(),
-            Colors.white,
+            Color(0xFFFFCBCB),
           ),
           borderRadius: BorderRadius.circular(8.0),
           border: Border.all(
@@ -139,67 +200,73 @@ class _QuizoptionWidgetState extends State<QuizoptionWidget> {
             }(),
           ),
         ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: 36.0,
-                height: 36.0,
-                decoration: BoxDecoration(
-                  color: () {
-                    if (_model.isanswered == true) {
-                      return Color(0xFF169E59);
-                    } else if (_model.isanswered == false) {
-                      return Color(0xFF169E59);
-                    } else {
-                      return Colors.white;
-                    }
-                  }(),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: () {
-                      if (_model.isanswered == true) {
-                        return Color(0xFF169E59);
-                      } else if (_model.isanswered == false) {
-                        return Color(0xFF169E59);
-                      } else {
-                        return Colors.white;
-                      }
-                    }(),
-                  ),
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(0.00, 0.00),
-                  child: Text(
-                    widget.questionnum!,
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color: Colors.black,
-                        ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                  child: Text(
-                    widget.questionname!.maybeHandleOverflow(
-                      maxChars: 80,
-                      replacement: '…',
+        child: Stack(
+          children: [
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 36.0,
+                    height: 36.0,
+                    decoration: BoxDecoration(
+                      color: () {
+                        if (_model.isanswered == true) {
+                          return Color(0xFF169E59);
+                        } else if (_model.isanswered == false) {
+                          return Color(0xFF169E59);
+                        } else {
+                          return Colors.white;
+                        }
+                      }(),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: () {
+                          if (_model.isanswered == true) {
+                            return Color(0xFF169E59);
+                          } else if (_model.isanswered == false) {
+                            return Color(0xFF169E59);
+                          } else {
+                            return Colors.white;
+                          }
+                        }(),
+                      ),
                     ),
-                    textAlign: TextAlign.start,
-                    maxLines: 2,
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color: Colors.black,
-                        ),
+                    child: Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Text(
+                        widget.questionnum!,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              color: Colors.black,
+                            ),
+                      ),
+                    ),
                   ),
-                ),
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                      child: Text(
+                        widget.questionname!.maybeHandleOverflow(
+                          maxChars: 80,
+                          replacement: '…',
+                        ),
+                        textAlign: TextAlign.start,
+                        maxLines: 2,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              color: Colors.black,
+                            ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

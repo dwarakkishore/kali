@@ -28,6 +28,8 @@ class _PppppWidgetState extends State<PppppWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PppppModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

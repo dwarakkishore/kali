@@ -124,6 +124,41 @@ class AskFlutterExsampleCall {
   }
 }
 
+class AIChatCall {
+  static Future<ApiCallResponse> call({
+    String? message = '',
+    String? apikey = '',
+  }) {
+    final ffApiRequestBody = '''
+{
+  "model": "gpt-3.5-turbo",
+  "messages": ${message}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AI chat',
+      apiUrl: 'https://api.openai.com/v1/chat/completions',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization':
+            'Bearer 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',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  static dynamic messagecontent(dynamic response) => getJsonField(
+        response,
+        r'''$.choices[:].message.content''',
+      );
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

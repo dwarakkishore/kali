@@ -30,6 +30,8 @@ class _NavBarFlotingWidgetState extends State<NavBarFlotingWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NavBarFlotingModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -171,12 +173,8 @@ class _NavBarFlotingWidgetState extends State<NavBarFlotingWidget> {
                         color: Color(0xFF3F3F3F),
                         size: 30.0,
                       ),
-                      onPressed: () async {
-                        logFirebaseEvent(
-                            'NAV_BAR_FLOTING_person_outline_ICN_ON_TA');
-                        logFirebaseEvent('IconButton_navigate_to');
-
-                        context.pushNamed('settings');
+                      onPressed: () {
+                        print('IconButton pressed ...');
                       },
                     ),
                   ],

@@ -17,12 +17,26 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _systemMessage = prefs.getString('ff_systemMessage') ?? _systemMessage;
+    });
+    _safeInit(() {
+      _UserReinforcement =
+          prefs.getString('ff_UserReinforcement') ?? _UserReinforcement;
+    });
+    _safeInit(() {
+      _gptOpener = prefs.getString('ff_gptOpener') ?? _gptOpener;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   int _completedquestions = 0;
   int get completedquestions => _completedquestions;
@@ -34,6 +48,47 @@ class FFAppState extends ChangeNotifier {
   int get score => _score;
   set score(int _value) {
     _score = _value;
+  }
+
+  String _systemMessage =
+      'You are a helpful AI assistant that helps answer any questions people may have!';
+  String get systemMessage => _systemMessage;
+  set systemMessage(String _value) {
+    _systemMessage = _value;
+    prefs.setString('ff_systemMessage', _value);
+  }
+
+  String _UserReinforcement =
+      'Hello! Just to reiterate, you are a helpful AI assistant that helps answer any questions people may have!';
+  String get UserReinforcement => _UserReinforcement;
+  set UserReinforcement(String _value) {
+    _UserReinforcement = _value;
+    prefs.setString('ff_UserReinforcement', _value);
+  }
+
+  String _gptOpener = 'How can I help you today?';
+  String get gptOpener => _gptOpener;
+  set gptOpener(String _value) {
+    _gptOpener = _value;
+    prefs.setString('ff_gptOpener', _value);
+  }
+
+  bool _awaitingReply = false;
+  bool get awaitingReply => _awaitingReply;
+  set awaitingReply(bool _value) {
+    _awaitingReply = _value;
+  }
+
+  String _prompt = '';
+  String get prompt => _prompt;
+  set prompt(String _value) {
+    _prompt = _value;
+  }
+
+  bool _unlocked = false;
+  bool get unlocked => _unlocked;
+  set unlocked(bool _value) {
+    _unlocked = _value;
   }
 }
 

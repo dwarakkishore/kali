@@ -29,3 +29,20 @@ dynamic saveChatHistory(
     return [newChat];
   }
 }
+
+dynamic generatemessage(
+  List<MessageRecord> messages,
+  String newMessage,
+) {
+  List<Map<String, String>> msgs = [];
+  messages.forEach((element) {
+    msgs.add({
+      "role": element.user == "ChatGPT" ? "assistant" : "user",
+      "content": element.message!
+    });
+  });
+
+  msgs.add({"role": "user", "content": newMessage});
+
+  return jsonEncode(msgs);
+}

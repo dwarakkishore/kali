@@ -1,7 +1,5 @@
 import '/backend/backend.dart';
-import '/components/quizoption_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -25,10 +23,14 @@ class QuizpageWidget extends StatefulWidget {
     Key? key,
     required this.quizsetref,
     required this.quizduration,
+    required this.cov,
+    required this.ccccc,
   }) : super(key: key);
 
   final DocumentReference? quizsetref;
   final int? quizduration;
+  final FFUploadedFile? cov;
+  final String? ccccc;
 
   @override
   _QuizpageWidgetState createState() => _QuizpageWidgetState();
@@ -117,8 +119,8 @@ class _QuizpageWidgetState extends State<QuizpageWidget>
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitFadingCube(
-                  color: Color(0xFF0B9D58),
+                child: SpinKitFadingFour(
+                  color: Color(0x9900CB68),
                   size: 50.0,
                 ),
               ),
@@ -126,636 +128,983 @@ class _QuizpageWidgetState extends State<QuizpageWidget>
           );
         }
         int quizpageCount = snapshot.data!;
-        return GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
-          child: WillPopScope(
-            onWillPop: () async => false,
-            child: Scaffold(
-              key: scaffoldKey,
-              backgroundColor: Color(0xFFF1F4F8),
-              body: Stack(
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
+        return Title(
+            title: 'Quizpage',
+            color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+            child: GestureDetector(
+              onTap: () => _model.unfocusNode.canRequestFocus
+                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                  : FocusScope.of(context).unfocus(),
+              child: WillPopScope(
+                onWillPop: () async => false,
+                child: Scaffold(
+                  key: scaffoldKey,
+                  backgroundColor: Color(0xFFF1F4F8),
+                  body: Stack(
                     children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 48.0, 20.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 121.0,
-                                    height: 36.0,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 12.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(
-                                            Icons.timer_sharp,
-                                            color: Colors.black,
-                                            size: 24.0,
-                                          ),
-                                          FlutterFlowTimer(
-                                            initialTime: widget.quizduration!,
-                                            getDisplayTime: (value) =>
-                                                StopWatchTimer.getDisplayTime(
-                                              value,
-                                              hours: false,
-                                              milliSecond: false,
-                                            ),
-                                            controller: _model.timerController,
-                                            updateStateInterval:
-                                                Duration(milliseconds: 1000),
-                                            onChanged: (value, displayTime,
-                                                shouldUpdate) {
-                                              _model.timerMilliseconds = value;
-                                              _model.timerValue = displayTime;
-                                              if (shouldUpdate) setState(() {});
-                                            },
-                                            onEnded: () async {
-                                              logFirebaseEvent(
-                                                  'QUIZTimer_l71sh00c_ON_TIMER_END');
-                                              logFirebaseEvent(
-                                                  'Timer_navigate_to');
-
-                                              context.goNamed(
-                                                'Scorepage',
-                                                queryParameters: {
-                                                  'scoreachieved':
-                                                      serializeParam(
-                                                    FFAppState().score,
-                                                    ParamType.int,
-                                                  ),
-                                                  'totalquestion':
-                                                      serializeParam(
-                                                    quizpageCount,
-                                                    ParamType.int,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily: 'Outfit',
-                                                  color: Colors.black,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: FFLocalizations.of(context).getText(
-                                      'hpfd0aav' /* Q */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: Color(0xFF169E59),
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                  TextSpan(
-                                    text: valueOrDefault<String>(
-                                      (_model.pagenavigate + 1).toString(),
-                                      '0',
-                                    ),
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                    ),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ),
-                          ],
-                        ).animateOnPageLoad(
-                            animationsMap['rowOnPageLoadAnimation']!),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 96.0, 0.0, 0.0),
-                          child: Container(
-                            width: double.infinity,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                            ),
-                            child: Column(
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 48.0, 20.0, 0.0),
+                            child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                LinearPercentIndicator(
-                                  percent: valueOrDefault<double>(
-                                    FFAppState().completedquestions /
-                                        quizpageCount,
-                                    0.0,
-                                  ),
-                                  width: 100.0,
-                                  lineHeight: 9.0,
-                                  animation: true,
-                                  animateFromLastPercent: true,
-                                  progressColor: Color(0xFF289C00),
-                                  backgroundColor: Color(0xB2FFFFFF),
-                                  barRadius: Radius.circular(0.0),
-                                  padding: EdgeInsets.zero,
-                                ),
                                 Expanded(
-                                  child: StreamBuilder<List<QuizRecord>>(
-                                    stream: queryQuizRecord(
-                                      queryBuilder: (quizRecord) =>
-                                          quizRecord.where(
-                                        'quiz_set',
-                                        isEqualTo: widget.quizsetref,
-                                      ),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: SpinKitFadingCube(
-                                              color: Color(0xFF0B9D58),
-                                              size: 50.0,
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<QuizRecord> pageViewQuizRecordList =
-                                          snapshot.data!;
-                                      return Container(
-                                        width: double.infinity,
-                                        height: 500.0,
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 40.0),
-                                          child: PageView.builder(
-                                            controller: _model
-                                                    .pageViewController ??=
-                                                PageController(
-                                                    initialPage: min(
-                                                        0,
-                                                        pageViewQuizRecordList
-                                                                .length -
-                                                            1)),
-                                            scrollDirection: Axis.horizontal,
-                                            itemCount:
-                                                pageViewQuizRecordList.length,
-                                            itemBuilder:
-                                                (context, pageViewIndex) {
-                                              final pageViewQuizRecord =
-                                                  pageViewQuizRecordList[
-                                                      pageViewIndex];
-                                              return Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                20.0,
-                                                                24.0,
-                                                                20.0,
-                                                                0.0),
-                                                    child: Text(
-                                                      pageViewQuizRecord
-                                                          .question,
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Readex Pro',
-                                                            color: Colors.black,
-                                                            fontSize: 16.0,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                20.0,
-                                                                24.0,
-                                                                20.0,
-                                                                0.0),
-                                                    child: ListView(
-                                                      padding: EdgeInsets.zero,
-                                                      shrinkWrap: true,
-                                                      scrollDirection:
-                                                          Axis.vertical,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      12.0),
-                                                          child: StreamBuilder<
-                                                              List<
-                                                                  QuestionARecord>>(
-                                                            stream:
-                                                                queryQuestionARecord(
-                                                              parent:
-                                                                  pageViewQuizRecord
-                                                                      .reference,
-                                                              singleRecord:
-                                                                  true,
-                                                            ),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        SpinKitFadingCube(
-                                                                      color: Color(
-                                                                          0xFF0B9D58),
-                                                                      size:
-                                                                          50.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<QuestionARecord>
-                                                                  quizoptionQuestionARecordList =
-                                                                  snapshot
-                                                                      .data!;
-                                                              // Return an empty Container when the item does not exist.
-                                                              if (snapshot.data!
-                                                                  .isEmpty) {
-                                                                return Container();
-                                                              }
-                                                              final quizoptionQuestionARecord =
-                                                                  quizoptionQuestionARecordList
-                                                                          .isNotEmpty
-                                                                      ? quizoptionQuestionARecordList
-                                                                          .first
-                                                                      : null;
-                                                              return QuizoptionWidget(
-                                                                key: Key(
-                                                                    'Keymc2_${pageViewIndex}_of_${pageViewQuizRecordList.length}'),
-                                                                questionnum:
-                                                                    'A',
-                                                                questionname:
-                                                                    quizoptionQuestionARecord!
-                                                                        .question,
-                                                                istrue:
-                                                                    quizoptionQuestionARecord!
-                                                                        .isTrue,
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      12.0),
-                                                          child: StreamBuilder<
-                                                              List<
-                                                                  QuestionBRecord>>(
-                                                            stream:
-                                                                queryQuestionBRecord(
-                                                              parent:
-                                                                  pageViewQuizRecord
-                                                                      .reference,
-                                                              singleRecord:
-                                                                  true,
-                                                            ),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        SpinKitFadingCube(
-                                                                      color: Color(
-                                                                          0xFF0B9D58),
-                                                                      size:
-                                                                          50.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<QuestionBRecord>
-                                                                  quizoptionQuestionBRecordList =
-                                                                  snapshot
-                                                                      .data!;
-                                                              // Return an empty Container when the item does not exist.
-                                                              if (snapshot.data!
-                                                                  .isEmpty) {
-                                                                return Container();
-                                                              }
-                                                              final quizoptionQuestionBRecord =
-                                                                  quizoptionQuestionBRecordList
-                                                                          .isNotEmpty
-                                                                      ? quizoptionQuestionBRecordList
-                                                                          .first
-                                                                      : null;
-                                                              return QuizoptionWidget(
-                                                                key: Key(
-                                                                    'Keyq3r_${pageViewIndex}_of_${pageViewQuizRecordList.length}'),
-                                                                questionnum:
-                                                                    'B',
-                                                                questionname:
-                                                                    quizoptionQuestionBRecord!
-                                                                        .question,
-                                                                istrue:
-                                                                    quizoptionQuestionBRecord!
-                                                                        .isTrue,
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      12.0),
-                                                          child: StreamBuilder<
-                                                              List<
-                                                                  QuestionCRecord>>(
-                                                            stream:
-                                                                queryQuestionCRecord(
-                                                              parent:
-                                                                  pageViewQuizRecord
-                                                                      .reference,
-                                                              singleRecord:
-                                                                  true,
-                                                            ),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        SpinKitFadingCube(
-                                                                      color: Color(
-                                                                          0xFF0B9D58),
-                                                                      size:
-                                                                          50.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<QuestionCRecord>
-                                                                  quizoptionQuestionCRecordList =
-                                                                  snapshot
-                                                                      .data!;
-                                                              // Return an empty Container when the item does not exist.
-                                                              if (snapshot.data!
-                                                                  .isEmpty) {
-                                                                return Container();
-                                                              }
-                                                              final quizoptionQuestionCRecord =
-                                                                  quizoptionQuestionCRecordList
-                                                                          .isNotEmpty
-                                                                      ? quizoptionQuestionCRecordList
-                                                                          .first
-                                                                      : null;
-                                                              return QuizoptionWidget(
-                                                                key: Key(
-                                                                    'Keyfb5_${pageViewIndex}_of_${pageViewQuizRecordList.length}'),
-                                                                questionnum:
-                                                                    'C',
-                                                                questionname:
-                                                                    quizoptionQuestionCRecord!
-                                                                        .question,
-                                                                istrue:
-                                                                    quizoptionQuestionCRecord!
-                                                                        .isTrue,
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      12.0),
-                                                          child: StreamBuilder<
-                                                              List<
-                                                                  QuestionDRecord>>(
-                                                            stream:
-                                                                queryQuestionDRecord(
-                                                              parent:
-                                                                  pageViewQuizRecord
-                                                                      .reference,
-                                                              singleRecord:
-                                                                  true,
-                                                            ),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        SpinKitFadingCube(
-                                                                      color: Color(
-                                                                          0xFF0B9D58),
-                                                                      size:
-                                                                          50.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<QuestionDRecord>
-                                                                  quizoptionQuestionDRecordList =
-                                                                  snapshot
-                                                                      .data!;
-                                                              // Return an empty Container when the item does not exist.
-                                                              if (snapshot.data!
-                                                                  .isEmpty) {
-                                                                return Container();
-                                                              }
-                                                              final quizoptionQuestionDRecord =
-                                                                  quizoptionQuestionDRecordList
-                                                                          .isNotEmpty
-                                                                      ? quizoptionQuestionDRecordList
-                                                                          .first
-                                                                      : null;
-                                                              return QuizoptionWidget(
-                                                                key: Key(
-                                                                    'Key7up_${pageViewIndex}_of_${pageViewQuizRecordList.length}'),
-                                                                questionnum:
-                                                                    'D',
-                                                                questionname:
-                                                                    quizoptionQuestionDRecord!
-                                                                        .question,
-                                                                istrue:
-                                                                    quizoptionQuestionDRecord!
-                                                                        .isTrue,
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ).animateOnPageLoad(animationsMap[
-                                          'pageViewOnPageLoadAnimation']!);
-                                    },
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 20.0, 24.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      if (FFAppState().completedquestions > 0)
-                                        Padding(
+                                      Container(
+                                        width: 121.0,
+                                        height: 36.0,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 16.0, 0.0),
-                                          child: FlutterFlowIconButton(
-                                            borderColor: Colors.transparent,
-                                            borderRadius: 12.0,
-                                            borderWidth: 1.0,
-                                            buttonSize: 40.0,
-                                            fillColor: Color(0xFF0B9D58),
-                                            icon: Icon(
-                                              Icons.arrow_back,
-                                              color: Colors.white,
-                                              size: 24.0,
-                                            ),
-                                            showLoadingIndicator: true,
-                                            onPressed: () async {
-                                              logFirebaseEvent(
-                                                  'QUIZPAGE_PAGE_arrow_back_ICN_ON_TAP');
-                                              logFirebaseEvent(
-                                                  'IconButton_page_view');
-                                              await _model.pageViewController
-                                                  ?.previousPage(
-                                                duration:
-                                                    Duration(milliseconds: 300),
-                                                curve: Curves.ease,
-                                              );
-                                              logFirebaseEvent(
-                                                  'IconButton_update_page_state');
-                                              setState(() {
-                                                _model.pagenavigate =
-                                                    _model.pagenavigate + -1;
-                                              });
-                                            },
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.timer_sharp,
+                                                color: Colors.black,
+                                                size: 24.0,
+                                              ),
+                                              FlutterFlowTimer(
+                                                initialTime:
+                                                    widget.quizduration!,
+                                                getDisplayTime: (value) =>
+                                                    StopWatchTimer
+                                                        .getDisplayTime(
+                                                  value,
+                                                  hours: false,
+                                                  milliSecond: false,
+                                                ),
+                                                controller:
+                                                    _model.timerController,
+                                                updateStateInterval: Duration(
+                                                    milliseconds: 1000),
+                                                onChanged: (value, displayTime,
+                                                    shouldUpdate) {
+                                                  _model.timerMilliseconds =
+                                                      value;
+                                                  _model.timerValue =
+                                                      displayTime;
+                                                  if (shouldUpdate)
+                                                    setState(() {});
+                                                },
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: Colors.black,
+                                                        ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      if (_model.instantTimer.isActive)
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 5.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                logFirebaseEvent(
-                                                    'QUIZPAGE_PAGE_NEXT_BTN_ON_TAP');
-                                                logFirebaseEvent(
-                                                    'Button_page_view');
-                                                await _model.pageViewController
-                                                    ?.nextPage(
-                                                  duration: Duration(
-                                                      milliseconds: 300),
-                                                  curve: Curves.ease,
-                                                );
-                                                if (quizpageCount !=
-                                                    _model.pagenavigate) {
-                                                  logFirebaseEvent(
-                                                      'Button_update_page_state');
-                                                  setState(() {
-                                                    _model.pagenavigate =
-                                                        _model.pagenavigate + 1;
-                                                  });
-                                                }
-                                              },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'b19hkj2c' /* Next */,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                RichText(
+                                  textScaleFactor:
+                                      MediaQuery.of(context).textScaleFactor,
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'hpfd0aav' /* Q */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color: Color(0xFF169E59),
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                      TextSpan(
+                                        text: valueOrDefault<String>(
+                                          (_model.pagenavigate + 1).toString(),
+                                          '0',
+                                        ),
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      )
+                                    ],
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                  ),
+                                ),
+                              ],
+                            ).animateOnPageLoad(
+                                animationsMap['rowOnPageLoadAnimation']!),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 96.0, 0.0, 0.0),
+                              child: Container(
+                                width: double.infinity,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    LinearPercentIndicator(
+                                      percent: valueOrDefault<double>(
+                                        FFAppState().completedquestions /
+                                            quizpageCount,
+                                        0.0,
+                                      ),
+                                      width: 100.0,
+                                      lineHeight: 9.0,
+                                      animation: true,
+                                      animateFromLastPercent: true,
+                                      progressColor: Color(0xFF289C00),
+                                      backgroundColor: Color(0xB2FFFFFF),
+                                      barRadius: Radius.circular(0.0),
+                                      padding: EdgeInsets.zero,
+                                    ),
+                                    Expanded(
+                                      child: StreamBuilder<List<QuizRecord>>(
+                                        stream: queryQuizRecord(
+                                          queryBuilder: (quizRecord) =>
+                                              quizRecord.where(
+                                            'quiz_set',
+                                            isEqualTo: widget.quizsetref,
+                                          ),
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child: SpinKitFadingFour(
+                                                  color: Color(0x9900CB68),
+                                                  size: 50.0,
+                                                ),
                                               ),
-                                              options: FFButtonOptions(
-                                                height: 60.0,
+                                            );
+                                          }
+                                          List<QuizRecord>
+                                              pageViewQuizRecordList =
+                                              snapshot.data!;
+                                          return Container(
+                                            width: double.infinity,
+                                            height: 500.0,
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 40.0),
+                                              child: PageView.builder(
+                                                physics:
+                                                    const NeverScrollableScrollPhysics(),
+                                                controller: _model
+                                                        .pageViewController ??=
+                                                    PageController(
+                                                        initialPage: min(
+                                                            0,
+                                                            pageViewQuizRecordList
+                                                                    .length -
+                                                                1)),
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                itemCount:
+                                                    pageViewQuizRecordList
+                                                        .length,
+                                                itemBuilder:
+                                                    (context, pageViewIndex) {
+                                                  final pageViewQuizRecord =
+                                                      pageViewQuizRecordList[
+                                                          pageViewIndex];
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    20.0,
+                                                                    24.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          pageViewQuizRecord
+                                                              .question,
+                                                          textAlign:
+                                                              TextAlign.start,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize: 16.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    20.0,
+                                                                    24.0,
+                                                                    20.0,
+                                                                    0.0),
+                                                        child: ListView(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          shrinkWrap: true,
+                                                          scrollDirection:
+                                                              Axis.vertical,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0),
+                                                              child: StreamBuilder<
+                                                                  List<
+                                                                      QuestionARecord>>(
+                                                                stream:
+                                                                    queryQuestionARecord(
+                                                                  parent: pageViewQuizRecord
+                                                                      .reference,
+                                                                  singleRecord:
+                                                                      true,
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            SpinKitFadingFour(
+                                                                          color:
+                                                                              Color(0x9900CB68),
+                                                                          size:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<QuestionARecord>
+                                                                      checkboxListTileQuestionARecordList =
+                                                                      snapshot
+                                                                          .data!;
+                                                                  // Return an empty Container when the item does not exist.
+                                                                  if (snapshot
+                                                                      .data!
+                                                                      .isEmpty) {
+                                                                    return Container();
+                                                                  }
+                                                                  final checkboxListTileQuestionARecord = checkboxListTileQuestionARecordList
+                                                                          .isNotEmpty
+                                                                      ? checkboxListTileQuestionARecordList
+                                                                          .first
+                                                                      : null;
+                                                                  return Theme(
+                                                                    data:
+                                                                        ThemeData(
+                                                                      checkboxTheme:
+                                                                          CheckboxThemeData(
+                                                                        visualDensity:
+                                                                            VisualDensity.compact,
+                                                                        materialTapTargetSize:
+                                                                            MaterialTapTargetSize.shrinkWrap,
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(25),
+                                                                        ),
+                                                                      ),
+                                                                      unselectedWidgetColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryText,
+                                                                    ),
+                                                                    child:
+                                                                        CheckboxListTile(
+                                                                      value: _model
+                                                                              .checkboxListTileValueMap1[pageViewQuizRecord] ??=
+                                                                          false,
+                                                                      onChanged:
+                                                                          (newValue) async {
+                                                                        setState(() =>
+                                                                            _model.checkboxListTileValueMap1[pageViewQuizRecord] =
+                                                                                newValue!);
+                                                                        if (newValue!) {
+                                                                          logFirebaseEvent(
+                                                                              'QUIZCheckboxListTile_yyed0z9z_ON_TOGGLE_');
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_wait__delay');
+                                                                          await Future.delayed(
+                                                                              const Duration(milliseconds: 400));
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_page_view');
+                                                                          await _model
+                                                                              .pageViewController
+                                                                              ?.nextPage(
+                                                                            duration:
+                                                                                Duration(milliseconds: 300),
+                                                                            curve:
+                                                                                Curves.ease,
+                                                                          );
+                                                                          if (_model
+                                                                              .checkboxListTileValueMap1[pageViewQuizRecord]!) {
+                                                                            if (_model.checkboxListTileValueMap1[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + 1;
+                                                                              });
+                                                                            } else {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + -1;
+                                                                              });
+                                                                            }
+                                                                          } else {
+                                                                            if (_model.checkboxListTileValueMap1[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_close_dialog,_drawer,_e');
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      title:
+                                                                          Text(
+                                                                        checkboxListTileQuestionARecord!
+                                                                            .question,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleLarge,
+                                                                      ),
+                                                                      tileColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      activeColor:
+                                                                          Color(
+                                                                              0xFF00B55A),
+                                                                      checkColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .info,
+                                                                      dense:
+                                                                          true,
+                                                                      controlAffinity:
+                                                                          ListTileControlAffinity
+                                                                              .leading,
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0),
+                                                              child: StreamBuilder<
+                                                                  List<
+                                                                      QuestionBRecord>>(
+                                                                stream:
+                                                                    queryQuestionBRecord(
+                                                                  parent: pageViewQuizRecord
+                                                                      .reference,
+                                                                  singleRecord:
+                                                                      true,
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            SpinKitFadingFour(
+                                                                          color:
+                                                                              Color(0x9900CB68),
+                                                                          size:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<QuestionBRecord>
+                                                                      checkboxListTileQuestionBRecordList =
+                                                                      snapshot
+                                                                          .data!;
+                                                                  // Return an empty Container when the item does not exist.
+                                                                  if (snapshot
+                                                                      .data!
+                                                                      .isEmpty) {
+                                                                    return Container();
+                                                                  }
+                                                                  final checkboxListTileQuestionBRecord = checkboxListTileQuestionBRecordList
+                                                                          .isNotEmpty
+                                                                      ? checkboxListTileQuestionBRecordList
+                                                                          .first
+                                                                      : null;
+                                                                  return Theme(
+                                                                    data:
+                                                                        ThemeData(
+                                                                      checkboxTheme:
+                                                                          CheckboxThemeData(
+                                                                        visualDensity:
+                                                                            VisualDensity.compact,
+                                                                        materialTapTargetSize:
+                                                                            MaterialTapTargetSize.shrinkWrap,
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(25),
+                                                                        ),
+                                                                      ),
+                                                                      unselectedWidgetColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryText,
+                                                                    ),
+                                                                    child:
+                                                                        CheckboxListTile(
+                                                                      value: _model
+                                                                              .checkboxListTileValueMap2[pageViewQuizRecord] ??=
+                                                                          false,
+                                                                      onChanged:
+                                                                          (newValue) async {
+                                                                        setState(() =>
+                                                                            _model.checkboxListTileValueMap2[pageViewQuizRecord] =
+                                                                                newValue!);
+                                                                        if (newValue!) {
+                                                                          logFirebaseEvent(
+                                                                              'QUIZCheckboxListTile_r463t86z_ON_TOGGLE_');
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_wait__delay');
+                                                                          await Future.delayed(
+                                                                              const Duration(milliseconds: 400));
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_page_view');
+                                                                          await _model
+                                                                              .pageViewController
+                                                                              ?.nextPage(
+                                                                            duration:
+                                                                                Duration(milliseconds: 300),
+                                                                            curve:
+                                                                                Curves.ease,
+                                                                          );
+                                                                          if (_model
+                                                                              .checkboxListTileValueMap2[pageViewQuizRecord]!) {
+                                                                            if (_model.checkboxListTileValueMap2[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + 1;
+                                                                              });
+                                                                            } else {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + -1;
+                                                                              });
+                                                                            }
+                                                                          } else {
+                                                                            if (_model.checkboxListTileValueMap2[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_close_dialog,_drawer,_e');
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      title:
+                                                                          Text(
+                                                                        checkboxListTileQuestionBRecord!
+                                                                            .question,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleLarge,
+                                                                      ),
+                                                                      tileColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      activeColor:
+                                                                          Color(
+                                                                              0xFF00B55A),
+                                                                      checkColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .info,
+                                                                      dense:
+                                                                          true,
+                                                                      controlAffinity:
+                                                                          ListTileControlAffinity
+                                                                              .leading,
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0),
+                                                              child: StreamBuilder<
+                                                                  List<
+                                                                      QuestionCRecord>>(
+                                                                stream:
+                                                                    queryQuestionCRecord(
+                                                                  parent: pageViewQuizRecord
+                                                                      .reference,
+                                                                  singleRecord:
+                                                                      true,
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            SpinKitFadingFour(
+                                                                          color:
+                                                                              Color(0x9900CB68),
+                                                                          size:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<QuestionCRecord>
+                                                                      checkboxListTileQuestionCRecordList =
+                                                                      snapshot
+                                                                          .data!;
+                                                                  // Return an empty Container when the item does not exist.
+                                                                  if (snapshot
+                                                                      .data!
+                                                                      .isEmpty) {
+                                                                    return Container();
+                                                                  }
+                                                                  final checkboxListTileQuestionCRecord = checkboxListTileQuestionCRecordList
+                                                                          .isNotEmpty
+                                                                      ? checkboxListTileQuestionCRecordList
+                                                                          .first
+                                                                      : null;
+                                                                  return Theme(
+                                                                    data:
+                                                                        ThemeData(
+                                                                      checkboxTheme:
+                                                                          CheckboxThemeData(
+                                                                        visualDensity:
+                                                                            VisualDensity.compact,
+                                                                        materialTapTargetSize:
+                                                                            MaterialTapTargetSize.shrinkWrap,
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(25),
+                                                                        ),
+                                                                      ),
+                                                                      unselectedWidgetColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryText,
+                                                                    ),
+                                                                    child:
+                                                                        CheckboxListTile(
+                                                                      value: _model
+                                                                              .checkboxListTileValueMap3[pageViewQuizRecord] ??=
+                                                                          false,
+                                                                      onChanged:
+                                                                          (newValue) async {
+                                                                        setState(() =>
+                                                                            _model.checkboxListTileValueMap3[pageViewQuizRecord] =
+                                                                                newValue!);
+                                                                        if (newValue!) {
+                                                                          logFirebaseEvent(
+                                                                              'QUIZCheckboxListTile_gn5tmfd9_ON_TOGGLE_');
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_wait__delay');
+                                                                          await Future.delayed(
+                                                                              const Duration(milliseconds: 400));
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_page_view');
+                                                                          await _model
+                                                                              .pageViewController
+                                                                              ?.nextPage(
+                                                                            duration:
+                                                                                Duration(milliseconds: 300),
+                                                                            curve:
+                                                                                Curves.ease,
+                                                                          );
+                                                                          if (_model
+                                                                              .checkboxListTileValueMap3[pageViewQuizRecord]!) {
+                                                                            if (_model.checkboxListTileValueMap3[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + 1;
+                                                                              });
+                                                                            } else {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + -1;
+                                                                              });
+                                                                            }
+                                                                          } else {
+                                                                            if (_model.checkboxListTileValueMap3[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_close_dialog,_drawer,_e');
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      title:
+                                                                          Text(
+                                                                        checkboxListTileQuestionCRecord!
+                                                                            .question,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleLarge,
+                                                                      ),
+                                                                      tileColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      activeColor:
+                                                                          Color(
+                                                                              0xFF00B55A),
+                                                                      checkColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .info,
+                                                                      dense:
+                                                                          true,
+                                                                      controlAffinity:
+                                                                          ListTileControlAffinity
+                                                                              .leading,
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0),
+                                                              child: StreamBuilder<
+                                                                  List<
+                                                                      QuestionDRecord>>(
+                                                                stream:
+                                                                    queryQuestionDRecord(
+                                                                  parent: pageViewQuizRecord
+                                                                      .reference,
+                                                                  singleRecord:
+                                                                      true,
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            SpinKitFadingFour(
+                                                                          color:
+                                                                              Color(0x9900CB68),
+                                                                          size:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<QuestionDRecord>
+                                                                      checkboxListTileQuestionDRecordList =
+                                                                      snapshot
+                                                                          .data!;
+                                                                  // Return an empty Container when the item does not exist.
+                                                                  if (snapshot
+                                                                      .data!
+                                                                      .isEmpty) {
+                                                                    return Container();
+                                                                  }
+                                                                  final checkboxListTileQuestionDRecord = checkboxListTileQuestionDRecordList
+                                                                          .isNotEmpty
+                                                                      ? checkboxListTileQuestionDRecordList
+                                                                          .first
+                                                                      : null;
+                                                                  return Theme(
+                                                                    data:
+                                                                        ThemeData(
+                                                                      checkboxTheme:
+                                                                          CheckboxThemeData(
+                                                                        visualDensity:
+                                                                            VisualDensity.compact,
+                                                                        materialTapTargetSize:
+                                                                            MaterialTapTargetSize.shrinkWrap,
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(25),
+                                                                        ),
+                                                                      ),
+                                                                      unselectedWidgetColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryText,
+                                                                    ),
+                                                                    child:
+                                                                        CheckboxListTile(
+                                                                      value: _model
+                                                                              .checkboxListTileValueMap4[pageViewQuizRecord] ??=
+                                                                          false,
+                                                                      onChanged:
+                                                                          (newValue) async {
+                                                                        setState(() =>
+                                                                            _model.checkboxListTileValueMap4[pageViewQuizRecord] =
+                                                                                newValue!);
+                                                                        if (newValue!) {
+                                                                          logFirebaseEvent(
+                                                                              'QUIZCheckboxListTile_xkvo3ouj_ON_TOGGLE_');
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_wait__delay');
+                                                                          await Future.delayed(
+                                                                              const Duration(milliseconds: 400));
+                                                                          logFirebaseEvent(
+                                                                              'CheckboxListTile_page_view');
+                                                                          await _model
+                                                                              .pageViewController
+                                                                              ?.nextPage(
+                                                                            duration:
+                                                                                Duration(milliseconds: 300),
+                                                                            curve:
+                                                                                Curves.ease,
+                                                                          );
+                                                                          if (_model
+                                                                              .checkboxListTileValueMap4[pageViewQuizRecord]!) {
+                                                                            if (_model.checkboxListTileValueMap4[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + 1;
+                                                                              });
+                                                                            } else {
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().completedquestions = FFAppState().completedquestions + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_app_state');
+                                                                              setState(() {
+                                                                                FFAppState().score = FFAppState().score + 1;
+                                                                              });
+                                                                              logFirebaseEvent('CheckboxListTile_update_page_state');
+                                                                              setState(() {
+                                                                                _model.pagenavigate = _model.pagenavigate + -1;
+                                                                              });
+                                                                            }
+                                                                          } else {
+                                                                            if (_model.checkboxListTileValueMap4[pageViewQuizRecord] !=
+                                                                                null) {
+                                                                              logFirebaseEvent('CheckboxListTile_close_dialog,_drawer,_e');
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      title:
+                                                                          Text(
+                                                                        checkboxListTileQuestionDRecord!
+                                                                            .question,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleLarge,
+                                                                      ),
+                                                                      tileColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      activeColor:
+                                                                          Color(
+                                                                              0xFF00B55A),
+                                                                      checkColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .info,
+                                                                      dense:
+                                                                          true,
+                                                                      controlAffinity:
+                                                                          ListTileControlAffinity
+                                                                              .leading,
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ).animateOnPageLoad(animationsMap[
+                                              'pageViewOnPageLoadAnimation']!);
+                                        },
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 20.0, 24.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (_model.instantTimer.isActive)
+                                            Expanded(
+                                              child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFF169E59),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    logFirebaseEvent(
+                                                        'QUIZPAGE_PAGE_NEXT_BTN_ON_TAP');
+                                                    logFirebaseEvent(
+                                                        'Button_page_view');
+                                                    await _model
+                                                        .pageViewController
+                                                        ?.nextPage(
+                                                      duration: Duration(
+                                                          milliseconds: 300),
+                                                      curve: Curves.ease,
+                                                    );
+                                                    if (quizpageCount !=
+                                                        _model.pagenavigate) {
+                                                      logFirebaseEvent(
+                                                          'Button_update_page_state');
+                                                      setState(() {
+                                                        _model.pagenavigate =
+                                                            _model.pagenavigate +
+                                                                1;
+                                                      });
+                                                    }
+                                                  },
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'b19hkj2c' /* Next */,
+                                                  ),
+                                                  options: FFButtonOptions(
+                                                    height: 60.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: Color(0xFF169E59),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
@@ -764,65 +1113,77 @@ class _QuizpageWidgetState extends State<QuizpageWidget>
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
-                                                elevation: 3.0,
-                                                borderSide: BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
+                                                    elevation: 3.0,
+                                                    borderSide: BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                      if (FFAppState().completedquestions ==
-                                          quizpageCount)
-                                        Expanded(
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              logFirebaseEvent(
-                                                  'QUIZPAGE_PAGE_COMPLETED_BTN_ON_TAP');
-                                              logFirebaseEvent(
-                                                  'Button_navigate_to');
+                                          if (FFAppState().completedquestions ==
+                                              quizpageCount)
+                                            Expanded(
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  logFirebaseEvent(
+                                                      'QUIZPAGE_PAGE_COMPLETED_BTN_ON_TAP');
+                                                  logFirebaseEvent(
+                                                      'Button_navigate_to');
 
-                                              context.pushNamed(
-                                                'Scorepage',
-                                                queryParameters: {
-                                                  'scoreachieved':
-                                                      serializeParam(
-                                                    FFAppState().score,
-                                                    ParamType.int,
-                                                  ),
-                                                  'totalquestion':
-                                                      serializeParam(
+                                                  context.pushNamed(
+                                                    'score',
+                                                    queryParameters: {
+                                                      'scoreachieved':
+                                                          serializeParam(
+                                                        FFAppState().score,
+                                                        ParamType.int,
+                                                      ),
+                                                      'totalscore':
+                                                          serializeParam(
+                                                        quizpageCount,
+                                                        ParamType.int,
+                                                      ),
+                                                      'quizref': serializeParam(
+                                                        widget.quizsetref,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
+                                                      'cov': serializeParam(
+                                                        widget.ccccc,
+                                                        ParamType.String,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+
+                                                  logFirebaseEvent(
+                                                      'Button_update_app_state');
+                                                  FFAppState().update(() {
                                                     FFAppState()
-                                                        .completedquestions,
-                                                    ParamType.int,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-
-                                              logFirebaseEvent(
-                                                  'Button_update_app_state');
-                                              FFAppState().update(() {
-                                                FFAppState()
-                                                    .completedquestions = 0;
-                                              });
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'uiv6vddv' /* Completed */,
-                                            ),
-                                            options: FFButtonOptions(
-                                              height: 60.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0xFF169E59),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
+                                                        .completedquestions = 0;
+                                                  });
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'uiv6vddv' /* Completed */,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 60.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: Color(0xFF169E59),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
                                                       .titleSmall
                                                       .override(
                                                         fontFamily:
@@ -831,31 +1192,32 @@ class _QuizpageWidgetState extends State<QuizpageWidget>
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
-                                              elevation: 3.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
                                             ),
-                                          ),
-                                        ),
-                                    ],
-                                  ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ),
-        );
+            ));
       },
     );
   }

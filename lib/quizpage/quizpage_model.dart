@@ -1,7 +1,5 @@
 import '/backend/backend.dart';
-import '/components/quizoption_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -46,6 +44,41 @@ class QuizpageModel extends FlutterFlowModel<QuizpageWidget> {
           pageViewController!.page != null
       ? pageViewController!.page!.round()
       : 0;
+  // State field(s) for CheckboxListTile widget.
+
+  Map<QuizRecord, bool> checkboxListTileValueMap1 = {};
+  List<QuizRecord> get checkboxListTileCheckedItems1 =>
+      checkboxListTileValueMap1.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
+
+  // State field(s) for CheckboxListTile widget.
+
+  Map<QuizRecord, bool> checkboxListTileValueMap2 = {};
+  List<QuizRecord> get checkboxListTileCheckedItems2 =>
+      checkboxListTileValueMap2.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
+
+  // State field(s) for CheckboxListTile widget.
+
+  Map<QuizRecord, bool> checkboxListTileValueMap3 = {};
+  List<QuizRecord> get checkboxListTileCheckedItems3 =>
+      checkboxListTileValueMap3.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
+
+  // State field(s) for CheckboxListTile widget.
+
+  Map<QuizRecord, bool> checkboxListTileValueMap4 = {};
+  List<QuizRecord> get checkboxListTileCheckedItems4 =>
+      checkboxListTileValueMap4.entries
+          .where((e) => e.value)
+          .map((e) => e.key)
+          .toList();
 
   /// Initialization and disposal methods.
 
@@ -58,6 +91,8 @@ class QuizpageModel extends FlutterFlowModel<QuizpageWidget> {
   }
 
   /// Action blocks are added here.
+
+  Future kloklklkk(BuildContext context) async {}
 
   /// Additional helper methods are added here.
 }

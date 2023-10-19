@@ -8,7 +8,8 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '../../auth/base_auth_user_provider.dart';
-
+import '../../backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -104,25 +105,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HomepageWidget(),
         ),
         FFRoute(
-          name: 'settings',
-          path: '/settings',
-          builder: (context, params) => SettingsWidget(),
-        ),
-        FFRoute(
           name: 'Quizpage',
           path: '/quizpage',
           builder: (context, params) => QuizpageWidget(
             quizsetref: params.getParam(
                 'quizsetref', ParamType.DocumentReference, false, ['quizset']),
             quizduration: params.getParam('quizduration', ParamType.int),
-          ),
-        ),
-        FFRoute(
-          name: 'Scorepage',
-          path: '/scorepage',
-          builder: (context, params) => ScorepageWidget(
-            scoreachieved: params.getParam('scoreachieved', ParamType.int),
-            totalquestion: params.getParam('totalquestion', ParamType.int),
+            cov: params.getParam('cov', ParamType.FFUploadedFile),
+            ccccc: params.getParam('ccccc', ParamType.String),
           ),
         ),
         FFRoute(
@@ -139,40 +129,73 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'signupp',
-          path: '/signupp',
-          builder: (context, params) => SignuppWidget(),
-        ),
-        FFRoute(
-          name: 'feeback',
-          path: '/feeback',
-          builder: (context, params) => FeebackWidget(),
-        ),
-        FFRoute(
-          name: 'scorerevealing',
-          path: '/scorerevealing',
-          builder: (context, params) => ScorerevealingWidget(
+          name: 'Quizconifrmation',
+          path: '/quizconifrmation',
+          builder: (context, params) => QuizconifrmationWidget(
             quizref: params.getParam(
-                'quizref', ParamType.DocumentReference, false, ['quiz']),
+                'quizref', ParamType.DocumentReference, false, ['quizset']),
+            quizduratioh: params.getParam('quizduratioh', ParamType.int),
+            tit: params.getParam('tit', ParamType.String),
+            des: params.getParam('des', ParamType.String),
+            totques: params.getParam('totques', ParamType.int),
+            cov: params.getParam('cov', ParamType.String),
+            kiki: params.getParam('kiki', ParamType.FFUploadedFile),
           ),
         ),
         FFRoute(
-          name: 'Aiintroduction',
-          path: '/aiintroduction',
-          builder: (context, params) => AiintroductionWidget(),
+          name: 'signupnew',
+          path: '/signupnew',
+          builder: (context, params) => SignupnewWidget(
+            newuser: params.getParam('newuser', ParamType.bool),
+          ),
         ),
         FFRoute(
-          name: 'CHATGPT',
-          path: '/chatgpt',
-          requireAuth: true,
-          builder: (context, params) => ChatgptWidget(),
+          name: 'score',
+          path: '/score',
+          builder: (context, params) => ScoreWidget(
+            scoreachieved: params.getParam('scoreachieved', ParamType.int),
+            totalscore: params.getParam('totalscore', ParamType.int),
+            quizref: params.getParam(
+                'quizref', ParamType.DocumentReference, false, ['quizset']),
+            cov: params.getParam('cov', ParamType.String),
+          ),
         ),
         FFRoute(
-          name: 'asffdfs',
-          path: '/asffdfs',
-          builder: (context, params) => AsffdfsWidget(),
+          name: 'welcomegpt',
+          path: '/welcomegpt',
+          builder: (context, params) => WelcomegptWidget(),
+        ),
+        FFRoute(
+          name: 'gptpage',
+          path: '/gptpage',
+          builder: (context, params) => GptpageWidget(
+            chatref: params.getParam(
+                'chatref', ParamType.DocumentReference, false, ['chat']),
+          ),
+        ),
+        FFRoute(
+          name: 'tiktikkkkk',
+          path: '/tiktikkkkk',
+          builder: (context, params) => TiktikkkkkWidget(
+            docrefvide: params.getParam(
+                'docrefvide', ParamType.DocumentReference, false, ['videos']),
+          ),
+        ),
+        FFRoute(
+          name: 'Details36ArticleDetails',
+          path: '/details36ArticleDetails',
+          builder: (context, params) => Details36ArticleDetailsWidget(
+            doc: params.getParam(
+                'doc', ParamType.DocumentReference, false, ['recentann']),
+          ),
+        ),
+        FFRoute(
+          name: 'OnboardingPage',
+          path: '/onboardingPage',
+          builder: (context, params) => OnboardingPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -353,11 +376,11 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/Group_4.png',
-                    fit: BoxFit.fitHeight,
+                    'assets/images/Desktop_-_3_(1).jpg',
+                    fit: BoxFit.cover,
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

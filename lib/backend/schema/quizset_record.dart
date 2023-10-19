@@ -41,12 +41,18 @@ class QuizsetRecord extends FirestoreRecord {
   String get coverPhoto => _coverPhoto ?? '';
   bool hasCoverPhoto() => _coverPhoto != null;
 
+  // "Premium" field.
+  bool? _premium;
+  bool get premium => _premium ?? false;
+  bool hasPremium() => _premium != null;
+
   void _initializeFields() {
     _quizName = snapshotData['quiz_name'] as String?;
     _duration = castToType<int>(snapshotData['duration']);
     _totalQuestions = castToType<int>(snapshotData['total_questions']);
     _description = snapshotData['description'] as String?;
     _coverPhoto = snapshotData['cover_photo'] as String?;
+    _premium = snapshotData['Premium'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -89,6 +95,7 @@ Map<String, dynamic> createQuizsetRecordData({
   int? totalQuestions,
   String? description,
   String? coverPhoto,
+  bool? premium,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -97,6 +104,7 @@ Map<String, dynamic> createQuizsetRecordData({
       'total_questions': totalQuestions,
       'description': description,
       'cover_photo': coverPhoto,
+      'Premium': premium,
     }.withoutNulls,
   );
 
@@ -112,7 +120,8 @@ class QuizsetRecordDocumentEquality implements Equality<QuizsetRecord> {
         e1?.duration == e2?.duration &&
         e1?.totalQuestions == e2?.totalQuestions &&
         e1?.description == e2?.description &&
-        e1?.coverPhoto == e2?.coverPhoto;
+        e1?.coverPhoto == e2?.coverPhoto &&
+        e1?.premium == e2?.premium;
   }
 
   @override
@@ -121,7 +130,8 @@ class QuizsetRecordDocumentEquality implements Equality<QuizsetRecord> {
         e?.duration,
         e?.totalQuestions,
         e?.description,
-        e?.coverPhoto
+        e?.coverPhoto,
+        e?.premium
       ]);
 
   @override
